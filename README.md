@@ -69,6 +69,7 @@ console.log(checkStyleFormatter(results));
 // </checkstyle>
 ```
 
+
 ## License
 
 MIT
