@@ -15,7 +15,8 @@
   ],
   "scripts": {
     "coveralls": "coveralls < coverage/lcov.info",
-    "pretest": "jshint .",
+    "lint": "standard",
+    "pretest": "npm run lint",
     "test": "nyc tape test/*.js"
   },
   "repository": {
@@ -39,8 +40,8 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
-    "jshint": "^2.7.0",
     "nyc": "^11.1.0",
+    "standard": "^10.0.3",
     "tape": "^4.0.0"
   }
 }

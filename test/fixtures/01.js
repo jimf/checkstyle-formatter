@@ -1,51 +1,51 @@
-'use strict';
+'use strict'
 
-var fs = require('fs'),
-    path = require('path');
+var fs = require('fs')
+var path = require('path')
 
 module.exports = {
-    results: [
+  results: [
+    {
+      filename: 'foo.js',
+      messages: [
         {
-            filename: 'foo.js',
-            messages: [
-                {
-                    line: 1,
-                    column: 2,
-                    severity: 'warning',
-                    message: 'the quick'
-                },
-                {
-                    line: 3,
-                    column: 4,
-                    severity: 'error',
-                    message: 'brown fox'
-                }
-            ]
+          line: 1,
+          column: 2,
+          severity: 'warning',
+          message: 'the quick'
         },
         {
-            filename: 'bar.js',
-            messages: [
-                {
-                    line: 5,
-                    column: 6,
-                    severity: 'warning',
-                    message: 'jumped over'
-                },
-                {
-                    line: 7,
-                    column: 8,
-                    severity: 'error',
-                    message: 'the lazy dog'
-                },
-                {
-                    line: 9,
-                    column: 10,
-                    severity: 'error',
-                    message: '& " \' < >',
-                    source: 'eslint.indent'
-                }
-            ]
+          line: 3,
+          column: 4,
+          severity: 'error',
+          message: 'brown fox'
         }
-    ],
-    expected: fs.readFileSync(path.join(__dirname, '01.xml'), 'utf8')
-};
+      ]
+    },
+    {
+      filename: 'bar.js',
+      messages: [
+        {
+          line: 5,
+          column: 6,
+          severity: 'warning',
+          message: 'jumped over'
+        },
+        {
+          line: 7,
+          column: 8,
+          severity: 'error',
+          message: 'the lazy dog'
+        },
+        {
+          line: 9,
+          column: 10,
+          severity: 'error',
+          message: '& " \' < >',
+          source: 'eslint.indent'
+        }
+      ]
+    }
+  ],
+  expected: fs.readFileSync(path.join(__dirname, '01.xml'), 'utf8')
+}

@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
-var xmlEscape = require('xml-escape');
+var xmlEscape = require('xml-escape')
 
 /**
  * Extract property and return as an XML attribute.
@@ -11,8 +11,8 @@ var xmlEscape = require('xml-escape');
  * @param {object} message Message object to generate attribute from
  * @param {string} prop Property on message to extract
  */
-function attr(message, prop) {
-    return prop + '="' + xmlEscape('' + message[prop]) + '"';
+function attr (message, prop) {
+  return prop + '="' + xmlEscape('' + message[prop]) + '"'
 }
 
 /**
@@ -21,11 +21,11 @@ function attr(message, prop) {
  * @param {object} message Message object to format
  * @return {string}
  */
-function formatMessage(message) {
-    message = Object.keys(message).map(attr.bind(null, message));
-    message.unshift('<error');
-    message.push('/>');
-    return message.join(' ');
+function formatMessage (message) {
+  message = Object.keys(message).map(attr.bind(null, message))
+  message.unshift('<error')
+  message.push('/>')
+  return message.join(' ')
 }
 
 /**
@@ -36,12 +36,12 @@ function formatMessage(message) {
  * @param {object[]} result.messages Warnings/errors for file
  * @return {string} XML representation for file and results
  */
-function formatResult(result) {
-    return [
-        '<file name="' + result.filename + '">',
-        result.messages.map(formatMessage).join('\n'),
-        '</file>'
-    ].join('\n');
+function formatResult (result) {
+  return [
+    '<file name="' + result.filename + '">',
+    result.messages.map(formatMessage).join('\n'),
+    '</file>'
+  ].join('\n')
 }
 
 /**
@@ -50,11 +50,11 @@ function formatResult(result) {
  * @param {object[]} results Array of { filename, messages } objects
  * @return {string}
  */
-module.exports = function(results) {
-    return [
-        '<?xml version="1.0" encoding="utf-8"?>',
-        '<checkstyle version="4.3">',
-        results.map(formatResult).join('\n'),
-        '</checkstyle>'
-    ].join('\n');
-};
+module.exports = function (results) {
+  return [
+    '<?xml version="1.0" encoding="utf-8"?>',
+    '<checkstyle version="4.3">',
+    results.map(formatResult).join('\n'),
+    '</checkstyle>'
+  ].join('\n')
+}
