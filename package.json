@@ -1,14 +1,19 @@
 {
   "name": "checkstyle-formatter",
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": true
+  },
   "version": "1.0.0",
   "description": "Simple Checkstyle data formatter",
   "main": "index.js",
   "scripts": {
-    "coverage": "istanbul cover test/*.js",
-    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "lint": "jshint .",
-    "test": "tape test/*.js",
-    "validate": "npm run lint && npm test && npm run coveralls"
+    "coveralls": "coveralls < coverage/lcov.info",
+    "pretest": "jshint .",
+    "test": "nyc tape test/*.js"
   },
   "repository": {
     "type": "git",
@@ -31,8 +36,8 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
-    "istanbul": "^0.3.14",
     "jshint": "^2.7.0",
+    "nyc": "^11.1.0",
     "tape": "^4.0.0"
   }
 }
