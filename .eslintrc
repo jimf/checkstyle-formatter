@@ -1,0 +1,54 @@
+{
+  "env": {
+    "node": true
+  },
+  "root": true,
+  "rules": {
+    "no-bitwise": 0,
+    "camelcase": "error",
+    "curly": "error",
+    "eqeqeq": "error",
+    "guard-for-in": 0,
+    "no-extend-native": "error",
+    "strict": [
+      "error",
+      "global"
+    ],
+    "wrap-iife": [
+      "error",
+      "any"
+    ],
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ],
+    "complexity": [
+      "error",
+      6
+    ],
+    "max-depth": [
+      "error",
+      5
+    ],
+    "new-cap": "error",
+    "no-caller": "error",
+    "no-empty": "error",
+    "no-new": "error",
+    "no-plusplus": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "no-undef": "error",
+    "no-unused-vars": "error"
+  }
+}
