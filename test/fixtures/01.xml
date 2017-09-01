@@ -7,6 +7,6 @@
 <file name="bar.js">
 <error line="5" column="6" severity="warning" message="jumped over" />
 <error line="7" column="8" severity="error" message="the lazy dog" />
-<error line="9" column="10" severity="error" message="&amp; &quot; &apos; &lt; &gt;" />
+<error line="9" column="10" severity="error" message="&amp; &quot; &apos; &lt; &gt;" source="eslint.indent" />
 </file>
 </checkstyle>

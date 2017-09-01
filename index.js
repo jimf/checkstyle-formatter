@@ -22,14 +22,10 @@ function attr(message, prop) {
  * @return {string}
  */
 function formatMessage(message) {
-    return [
-        '<error',
-        attr(message, 'line'),
-        attr(message, 'column'),
-        attr(message, 'severity'),
-        attr(message, 'message'),
-        '/>'
-    ].join(' ');
+    message = Object.keys(message).map(attr.bind(null, message));
+    message.unshift('<error');
+    message.push('/>');
+    return message.join(' ');
 }
 
 /**

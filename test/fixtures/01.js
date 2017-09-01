@@ -41,7 +41,8 @@ module.exports = {
                     line: 9,
                     column: 10,
                     severity: 'error',
-                    message: '& " \' < >'
+                    message: '& " \' < >',
+                    source: 'eslint.indent'
                 }
             ]
         }
