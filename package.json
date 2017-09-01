@@ -10,6 +10,9 @@
   "version": "1.0.0",
   "description": "Simple Checkstyle data formatter",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "coveralls": "coveralls < coverage/lcov.info",
     "pretest": "jshint .",
