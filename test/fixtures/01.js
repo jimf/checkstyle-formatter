@@ -42,7 +42,8 @@ module.exports = {
           column: 10,
           severity: 'error',
           message: '& " \' < >',
-          source: 'eslint.indent'
+          source: 'eslint.indent',
+          unexpectedKey: 'should not appear in output'
         }
       ]
     }

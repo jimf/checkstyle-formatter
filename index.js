@@ -10,9 +10,10 @@ var xmlEscape = require('xml-escape')
  *
  * @param {object} message Message object to generate attribute from
  * @param {string} prop Property on message to extract
+ * @return {string}
  */
 function attr (message, prop) {
-  return prop + '="' + xmlEscape('' + message[prop]) + '"'
+  return ' ' + prop + '="' + xmlEscape('' + message[prop]) + '"'
 }
 
 /**
@@ -22,10 +23,13 @@ function attr (message, prop) {
  * @return {string}
  */
 function formatMessage (message) {
-  message = Object.keys(message).map(attr.bind(null, message))
-  message.unshift('<error')
-  message.push('/>')
-  return message.join(' ')
+  return '<error' +
+    attr(message, 'line') +
+    attr(message, 'column') +
+    attr(message, 'severity') +
+    attr(message, 'message') +
+    ('source' in message ? attr(message, 'source') : '') +
+    ' />'
 }
 
 /**
