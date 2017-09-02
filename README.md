@@ -69,6 +69,14 @@ console.log(checkstyleFormatter(results));
 // </checkstyle>
 ```
 
+## Changelog
+
+#### 1.1.0
+- Add support for optional `source` information
+
+#### 1.0.0
+- Initial release
+
 ## License
 
 MIT

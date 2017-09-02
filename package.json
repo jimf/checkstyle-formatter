@@ -1,13 +1,6 @@
 {
   "name": "checkstyle-formatter",
-  "nyc": {
-    "reporter": [
-      "lcov",
-      "text-summary"
-    ],
-    "cache": true
-  },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple Checkstyle data formatter",
   "main": "index.js",
   "files": [
@@ -18,6 +11,13 @@
     "lint": "standard",
     "pretest": "npm run lint",
     "test": "nyc tape test/*.js"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": true
   },
   "repository": {
     "type": "git",
