@@ -3,6 +3,19 @@
 var xmlEscape = require('xml-escape')
 
 /**
+ * Escapes an XML attribute value.
+ *
+ * @param {string} value Attribute value to escape
+ * @return {string}
+ */
+function xmlEscapeAttr (value) {
+  return xmlEscape(value)
+    .replace(/\n/g, '&#xA;')
+    .replace(/\r/g, '&#xD;')
+    .replace(/\t/g, '&#x9;')
+}
+
+/**
  * Extract property and return as an XML attribute.
  *
  * Example:
@@ -13,7 +26,7 @@ var xmlEscape = require('xml-escape')
  * @return {string}
  */
 function attr (message, prop) {
-  return ' ' + prop + '="' + xmlEscape('' + message[prop]) + '"'
+  return ' ' + prop + '="' + xmlEscapeAttr('' + message[prop]) + '"'
 }
 
 /**

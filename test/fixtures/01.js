@@ -44,6 +44,12 @@ module.exports = {
           message: '& " \' < >',
           source: 'eslint.indent',
           unexpectedKey: 'should not appear in output'
+        },
+        {
+          line: 11,
+          column: 12,
+          severity: 'error',
+          message: 'message\nwith\r\nnewlines and\ttabs'
         }
       ]
     }
